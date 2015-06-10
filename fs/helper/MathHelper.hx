@@ -220,28 +220,6 @@ class MathHelper
 		return (val * Math.PI) / 180;
     }
 	
-	/*
-	 * Transform the circle coordinates compared to the rotated rectangle.
-	 * This function is used to perform physics collision between a rotated rectangle and a circle.
-	 * 
-	 * */
-	public static function TransformCoordinates(circle : Circle,rectangle : Rectangle) : Point
-	{
-		var newX, newY, angle, cx,cy,rx,ry : Float;
-		
-		cx = circle.GetPosition().x;
-		cy = circle.GetPosition().y;
-		rx = rectangle.GetPosition().x;
-		ry = rectangle.GetPosition().y;
-		angle = rectangle.GetRotationAngle();
-		
-		newX = Math.cos(DEGREE_RAD_CONVERSION * -angle) * (cx - rx) - Math.sin(DEGREE_RAD_CONVERSION * -angle) * (cy - ry) + rx;
-		newY = Math.sin(DEGREE_RAD_CONVERSION * -angle) * (cx - rx) + Math.cos(DEGREE_RAD_CONVERSION * -angle) * (cy - ry) + ry;
-
-		
-		return new Point(newX,newY);
-	}
-	
 	public static function TransformPoint(point : Point, pivot : Point, theta : Float) : Point
 	{
 		var newPoint : Point;
