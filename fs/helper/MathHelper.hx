@@ -16,10 +16,10 @@ class MathHelper
 	private static var MAX_HEX = 255;
 	
 	//Constant to represent ONE second in milliseconds.
-	static private var MILLISECONDS : Int = 1000;
+	private static var MILLISECONDS : Int = 1000;
 	
 	//Converstion rate for degrees <-> rad
-	static private var DEGREE_RAD_CONVERSION : Float = (Math.PI / 180);
+	private static var DEGREE_RAD_CONVERSION : Float = (Math.PI / 180);
 	
 	public static function CreateID(?size : Int) : String 
 	{
