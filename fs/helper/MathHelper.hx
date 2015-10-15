@@ -35,6 +35,19 @@ class MathHelper
 		return uid.toString(); 
 	}
 	
+	/*
+	* Converts a number to a Character
+	* @param number between 0 and UID_CHARS.length
+	* @return Character from 0 to z
+	*/
+	public static function FromNumberToChar(number : Int) : String 
+	{
+		if (number < 0 || number > UID_CHARS.length)
+			throw "Error: number between 0 and " + UID_CHARS.length;
+			
+		return UID_CHARS.charAt(number); 
+	}
+	
    /*
 	* Return object with rgb triplet from hex float
 	* <pre class="code haxe">
