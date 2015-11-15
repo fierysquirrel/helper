@@ -1,4 +1,4 @@
-package fs.helper;
+package;
 
 import flash.geom.Point;
 import openfl.Assets;
