@@ -18,8 +18,14 @@ class MathHelper
 	//Constant to represent ONE second in milliseconds.
 	private static var MILLISECONDS : Int = 1000;
 	
+	//Frames Per Second
+	private static var FPS : Float = 60;
+	
 	//Converstion rate for degrees <-> rad
 	private static var DEGREE_RAD_CONVERSION : Float = (Math.PI / 180);
+	
+	//Time step according to the FPS and MIlliseconds
+	private static var TIME_STEP : Float = (FPS / MILLISECONDS);
 	
 	public static function CreateID(?size : Int) : String 
 	{
@@ -267,5 +273,15 @@ class MathHelper
 	public static function PointInsideCircle(point : Point, circlePoint : Point, radius : Float) : Bool
 	{
 		return ((point.x - circlePoint.x) * (point.x - circlePoint.x)) + ((point.y - circlePoint.y) * (point.y - circlePoint.y)) < radius * radius;
+	}
+	
+	public static function F2T(delta : Float, value : Float) : Float
+	{
+		return (value * delta) * TIME_STEP;
+	}
+	
+	public static function P2T(delta : Float, value : Point) : Point
+	{
+		return new Point((value.x * delta) * TIME_STEP,(value.y * delta) * TIME_STEP);
 	}
 }
